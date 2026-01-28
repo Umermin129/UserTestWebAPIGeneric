@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Interfaces
+namespace Application.Services.Interfaces
 {
-    public interface  IUserRepository
+    public interface IStudent 
     {
-        Task<User> CreateUser(User user);
+        //Task<CreateStudentResponse> CreateStudent(StudentModel student);
     }
 }

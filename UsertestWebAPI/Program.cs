@@ -1,7 +1,10 @@
-using Application.Interfaces;
+using Application.DTOs;
 using Application.Services;
 using Application.Services.Interfaces;
+using Domain.Entities;
+using Domain.Models;
 using Infrastructure.Data;
+using Infrastructure.Interfaces;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,8 +19,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseSqlServer(connectionString);
 });
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IRepository<User>, UserRepository>();
+builder.Services.AddScoped<IRepository<Student>, StudentRepository>();
+builder.Services.AddScoped<IRepository<Teacher>, TeacherRepository>();
+builder.Services.AddScoped<IService<User,UserResponse,UserModel>, UserService>();
+builder.Services.AddScoped<IService<Student,StudentResponse,StudentModel>, StudentService>();
+builder.Services.AddScoped<IService<Teacher,TeacherResponse,TeacherModel>, TeacherService>();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

@@ -22,3 +22,15 @@ C:\Users\DELL\Downloads\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test
 C:\Users\DELL\Downloads\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\DELL\Downloads\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\DELL\Downloads\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\bin\Debug\net8.0\Domain.dll
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\Domain.dll
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Umer\Dotnet User Test\Dotnet User Test-20260125T092312Z-3-001\Dotnet User Test\UsertestWebAPI\Domain\obj\Debug\net8.0\ref\Domain.dll

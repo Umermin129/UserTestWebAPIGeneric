@@ -1,44 +1,68 @@
 ﻿using Application.DTOs;
 using Application.Services.Interfaces;
-using Application.Interfaces;
+using Domain.Entities;
 using Domain.Models;
+using Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Domain.Entities;
 
 namespace Application.Services
 {
-    public class UserService : IUserService
+    public class UserService(
+        IUnitOfWork unitOfWork,
+        IRepository<User> userRepository
+    ) : IService<User, UserResponse, UserModel>
     {
-        private readonly IUserRepository _userRepository;
-        public UserService(IUserRepository userRepository)
-        {
-            _userRepository = userRepository;
-        }
-        public async Task<CreateUserResponse> CreateUser(UserModel request)
+        private readonly IRepository<User> _userRepository = userRepository;
+
+        public async Task<UserResponse> CreateAsync(UserModel request)
         {
             if (request == null)
-            {
                 throw new ArgumentNullException(nameof(request));
-            }
-            else
-            {
-                var createUser = new User { Id = Guid.NewGuid(), Name = request.Name, Email = request.Email };
-                var response = await _userRepository.CreateUser(createUser);
-                if (response == null)
-                {
-                    throw new ApplicationException("User Creation was failed");
-                }
-                var userName = new CreateUserResponse { Name = response.Name };
-                return userName;
-            }
-        }
-        //public async Task<UserResponse> GetUserById(Guid id)
-        //{
 
-        //}
+            var user = new User
+            {
+                Id = Guid.NewGuid(),
+                Name = request.Name,
+                Email = request.Email
+            };
+
+            var response = await _userRepository.Create(user);
+            await unitOfWork.SaveChanges();
+
+            return new UserResponse(
+                response.Id,
+                response.Name,
+                response.Email
+            );
+        }
+
+        public async Task<UserResponse> GetAsync(Guid id)
+        {
+            var user = await _userRepository.GetAsync(id);
+            if (user == null)
+                throw new ApplicationException("User not found");
+
+            return new UserResponse(
+                user.Id,
+                user.Name,
+                user.Email
+            );
+        }
+
+        public async Task<List<UserResponse>> GetAllAsync()
+        {
+            var users = await _userRepository.GetAllAsync();
+
+            return users
+                .Select(u => new UserResponse(
+                    u.Id,
+                    u.Name,
+                    u.Email
+                ))
+                .ToList();
+        }
     }
 }

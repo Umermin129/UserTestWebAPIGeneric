@@ -1,14 +1,98 @@
 [
   {
-    "ContainingType": "UsertestWebAPI.Controllers.UserController",
-    "Method": "CreateUser",
+    "ContainingType": "UsertestWebAPI.Controllers.BaseController\u00603[[Domain.Entities.Student, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Application.DTOs.StudentResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Domain.Models.StudentModel, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Create",
+    "RelativePath": "api/students",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Domain.Models.StudentModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsertestWebAPI.Controllers.BaseController\u00603[[Domain.Entities.Student, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Application.DTOs.StudentResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Domain.Models.StudentModel, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/students",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsertestWebAPI.Controllers.BaseController\u00603[[Domain.Entities.Student, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Application.DTOs.StudentResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Domain.Models.StudentModel, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Get",
+    "RelativePath": "api/students/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsertestWebAPI.Controllers.BaseController\u00603[[Domain.Entities.Teacher, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Application.DTOs.TeacherResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Domain.Models.TeacherModel, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Create",
+    "RelativePath": "api/Teacher",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Domain.Models.TeacherModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsertestWebAPI.Controllers.BaseController\u00603[[Domain.Entities.Teacher, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Application.DTOs.TeacherResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Domain.Models.TeacherModel, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/Teacher",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsertestWebAPI.Controllers.BaseController\u00603[[Domain.Entities.Teacher, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Application.DTOs.TeacherResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Domain.Models.TeacherModel, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Get",
+    "RelativePath": "api/Teacher/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsertestWebAPI.Controllers.BaseController\u00603[[Domain.Entities.User, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Application.DTOs.UserResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Domain.Models.UserModel, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Create",
     "RelativePath": "User",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
+        "Name": "model",
         "Type": "Domain.Models.UserModel",
         "IsRequired": true
       }
@@ -16,9 +100,35 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "UsertestWebAPI.Controllers.UserController",
-    "Method": "GetUser",
+    "ContainingType": "UsertestWebAPI.Controllers.BaseController\u00603[[Domain.Entities.User, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Application.DTOs.UserResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Domain.Models.UserModel, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
     "RelativePath": "User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsertestWebAPI.Controllers.BaseController\u00603[[Domain.Entities.User, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Application.DTOs.UserResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Domain.Models.UserModel, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Get",
+    "RelativePath": "User/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsertestWebAPI.Controllers.UserController",
+    "Method": "GetActive",
+    "RelativePath": "User/active",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

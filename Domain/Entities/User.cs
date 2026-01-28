@@ -11,5 +11,7 @@ namespace Domain.Entities
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
+        public Student? Student { get; set; }
+        public Teacher? Teacher { get; set; }
     }
 }

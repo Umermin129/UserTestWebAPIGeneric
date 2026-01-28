@@ -10,6 +10,6 @@ namespace Application.Services.Interfaces
 {
     public interface IUserService
     {
-        Task<CreateUserResponse> CreateUser(UserModel request);
+        Task<UserResponse> CreateUser(UserModel request);
     }
 }

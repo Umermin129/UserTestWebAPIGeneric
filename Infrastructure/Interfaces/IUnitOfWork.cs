@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.DTOs
+namespace Infrastructure.Interfaces
 {
-    public record CreateUserResponse
+    public interface IUnitOfWork
     {
-        public string? Name { get; set; }
+        Task SaveChanges();
     }
 }

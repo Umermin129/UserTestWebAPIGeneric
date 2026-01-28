@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace Domain.Models
 {
     public record UserModel
-    {
-        public string? Name { get; set; }
-        public string? Email { get; set; }
-    }
+    (
+        string Name ,
+        string Email
+    );
 }

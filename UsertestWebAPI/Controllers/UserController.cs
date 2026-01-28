@@ -1,4 +1,6 @@
-﻿using Application.Services.Interfaces;
+﻿using Application.DTOs;
+using Application.Services.Interfaces;
+using Domain.Entities;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 namespace UsertestWebAPI.Controllers
@@ -6,30 +8,19 @@ namespace UsertestWebAPI.Controllers
 
     [ApiController]
     [Route("[controller]")]
-    public class UserController(IUserService userService) : Controller
+    public class UserController : BaseController<User,UserResponse,UserModel>
     {
-        private readonly IUserService _userService = userService;
-
-        [HttpPost]
-        public async Task<IActionResult> CreateUser([FromBody] UserModel  user)
+        private readonly IService<User, UserResponse, UserModel> _service;
+        public UserController(IService<User, UserResponse, UserModel> service)
+: base(service)
         {
-            var response = await _userService.CreateUser(user);
-            return Ok(new
-            {
-                StatusCode = 200,
-                description = "User Created Successfully",
-                name = response.Name
-        });
+            _service = service;
         }
-        [HttpGet]
-        public async Task<IActionResult> GetUser()
+        [HttpGet("active")]
+        public async Task<IActionResult> GetActive()
         {
-            return Ok(new
-            {
-                StatusCode = 200,
-                description = "Returned response successfully!"
-
-            });
+            var response = await _service.GetAllAsync();
+            return Ok(new {description = "Returned All Users", response });
         }
     }
 }

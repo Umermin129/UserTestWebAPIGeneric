@@ -17,6 +17,19 @@ namespace Infrastructure.Data
         {
         }
         public DbSet<User> Users => Set<User>();
-
+        public DbSet<Student> Students => Set<Student>();
+        public DbSet<Teacher> Teachers => Set<Teacher>();
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Student>()
+                .HasOne(s => s.User)
+                .WithOne(u => u.Student)
+                .HasForeignKey<Student>(s => s.UserId);
+            modelBuilder.Entity<Teacher>()
+       .HasOne(s => s.User)
+       .WithOne(u => u.Teacher)
+       .HasForeignKey<Teacher>(s => s.UserId);
+        }
     }
 }
