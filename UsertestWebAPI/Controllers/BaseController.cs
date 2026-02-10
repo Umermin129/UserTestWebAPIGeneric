@@ -38,7 +38,7 @@ namespace UsertestWebAPI.Controllers
         public virtual async Task<IActionResult> GetAll()
         {
             var response = await _service.GetAllAsync();
-            if (response.IsNullOrEmpty()) return NotFound();
+            if (response ==null) return NotFound();
             return Ok(new { description = $"Successfully Retrieved all {typeof(TEntity).Name}s", response });
         }
     }

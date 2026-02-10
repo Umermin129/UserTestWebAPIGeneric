@@ -6,6 +6,8 @@ using Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.Services
@@ -26,7 +28,9 @@ namespace Application.Services
             {
                 Id = Guid.NewGuid(),
                 Name = request.Name,
-                Email = request.Email
+                Email = request.Email,
+                PasswordHash = request.Password != null ? HashPassword(request.Password) : string.Empty,
+                Role = request.Role ?? Domain.Enums.Role.Student
             };
 
             var response = await _userRepository.Create(user);
@@ -35,7 +39,8 @@ namespace Application.Services
             return new UserResponse(
                 response.Id,
                 response.Name,
-                response.Email
+                response.Email,
+                response.Role
             );
         }
 
@@ -48,7 +53,8 @@ namespace Application.Services
             return new UserResponse(
                 user.Id,
                 user.Name,
-                user.Email
+                user.Email,
+                user.Role
             );
         }
 
@@ -60,9 +66,17 @@ namespace Application.Services
                 .Select(u => new UserResponse(
                     u.Id,
                     u.Name,
-                    u.Email
+                    u.Email,
+                    u.Role
                 ))
                 .ToList();
+        }
+
+        private string HashPassword(string password)
+        {
+            using var sha256 = SHA256.Create();
+            var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+            return Convert.ToBase64String(hashedBytes);
         }
     }
 }

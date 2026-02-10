@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace Domain.Models
     public record UserModel
     (
         string Name ,
-        string Email
+        string Email,
+        string? Password = null,
+        Role? Role = null
     );
 }
