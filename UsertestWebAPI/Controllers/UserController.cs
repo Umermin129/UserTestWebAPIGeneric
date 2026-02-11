@@ -1,15 +1,13 @@
 ﻿using Application.DTOs;
 using Application.Services.Interfaces;
 using Domain.Entities;
+using Domain.Enums;
 using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace UsertestWebAPI.Controllers
 {
 
-    [ApiController]
-    [Route("api/[controller]")]
-    [Authorize] // Require authentication for all endpoints
     public class UserController : BaseController<User,UserResponse,UserModel>
     {
         private readonly IService<User, UserResponse, UserModel> _service;
@@ -20,7 +18,6 @@ namespace UsertestWebAPI.Controllers
         }
         
         [HttpGet("active")]
-        [Authorize(Policy = "ViewUsers")] // Require ViewUsers permission
         public async Task<IActionResult> GetActive()
         {
             var response = await _service.GetAllAsync();
